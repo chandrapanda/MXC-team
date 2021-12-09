@@ -12,7 +12,11 @@ function getCatFact() {
 
 dogPicsButton.addEventListener("click", );
 
-funnyJokesButton.addEventListener("click", );
+funnyJokesButton.addEventListener("click", function(){
+    var funnyJokes
+
+});
+
 
 catFactsButton.addEventListener("click", getCatFact);
 
