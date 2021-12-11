@@ -29,8 +29,6 @@ function getDogPicture() {
 }
 
 
-// dogPicsButton.addEventListener("click", );
-
 funnyJokesButton.addEventListener("click",funnyJokes);
    function funnyJokes() {
        var jokes = "https://api.chucknorris.io/jokes/random"
