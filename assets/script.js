@@ -21,8 +21,15 @@ function displayCatFact(kittyStuff) {
     console.log(kittyStuff.fact);
 }
 
+function getDogPicture() {
+    var getDogAPI = "https://dog.ceo/api/breeds/image/random";
+    fetch(getDogAPI)
+    .then(response => response.json())
+    .then(data => console.log(data));
+}
 
-// dogPicsButton.addEventListener("click", );
+
+dogPicsButton.addEventListener("click", getDogPicture );
 
 // funnyJokesButton.addEventListener("click", );
 
