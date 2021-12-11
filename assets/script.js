@@ -10,12 +10,15 @@ function getCatFact() {
 }
 
 
-dogPicsButton.addEventListener("click", );
+// dogPicsButton.addEventListener("click", );
 
-funnyJokesButton.addEventListener("click", function(){
-    var funnyJokes
-
-});
+funnyJokesButton.addEventListener("click",funnyJokes);
+   function funnyJokes() {
+       var jokes = "https://api.chucknorris.io/jokes/random"
+       fetch(jokes)
+       .then(response => response.json())
+       .then(data => console.log(data));
+   };
 
 
 catFactsButton.addEventListener("click", getCatFact);
