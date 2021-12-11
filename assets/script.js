@@ -21,6 +21,7 @@ function displayCatFact(kittyStuff) {
     console.log(kittyStuff.fact);
 }
 
+
 // dogPicsButton.addEventListener("click", );
 
 // funnyJokesButton.addEventListener("click", );
