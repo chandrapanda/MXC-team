@@ -29,6 +29,15 @@ function getDogPicture() {
 }
 
 
+funnyJokesButton.addEventListener("click",funnyJokes);
+   function funnyJokes() {
+       var jokes = "https://api.chucknorris.io/jokes/random"
+       fetch(jokes)
+       .then(response => response.json())
+       .then(data => console.log(data));
+       document.getElementById("button-container").style.display = "none"; 
+   };
+
 dogPicsButton.addEventListener("click", getDogPicture );
 
 // funnyJokesButton.addEventListener("click", );
