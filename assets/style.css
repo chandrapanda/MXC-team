@@ -1,8 +1,16 @@
-#back-button {
+#back-button-container {
     display: none;
 }
 
-.navbar-item a:hover {
-    background-color: pink;
-    color: black;
+.dog-pictures {
+    width: 500px;
+    height: auto;
+}
+
+
+@media only screen and (max-width: 962px) {
+    .dog-pictures {
+        width: 250px;
+        height: auto;
+    }
 }
