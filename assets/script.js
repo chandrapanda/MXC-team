@@ -49,6 +49,23 @@ function funnyJokes() {
     var jokes = "https://api.chucknorris.io/jokes/random"
     fetch(jokes)
     .then(response => response.json())
+
+    .then(function(data) {
+        displayFunnyJoke(data)
+    });
+    
+    document.getElementById("button-container").style.display = "none";
+    document.getElementById("back-button").style.display = "block";
+};
+
+function displayFunnyJoke(funnyStuff) {
+    var firstFunnyThing = funnyStuff.value;
+    // we should discuss changing "catFact" to a more universal name
+    document.body.appendChild(catFact);
+    catFact.innerHTML = firstFunnyThing;
+}
+
+
     .then(data => console.log(data));
     document.getElementById("button-container").style.display = "none"; 
 };
