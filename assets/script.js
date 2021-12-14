@@ -62,11 +62,12 @@ function displayFunnyJoke(funnyStuff) {
     var firstFunnyThing = funnyStuff.value;
     document.body.appendChild(paragraphEl);
     paragraphEl.innerHTML = firstFunnyThing;
-
+    document.getElementById('save-button').addEventListener("click", saveFunnyJoke);
 }
 
 function saveFunnyJoke () {
     var savedJokes = localStorage.setItem('savedJokes');
+
 }
 
 function goBackToMainPage() {
