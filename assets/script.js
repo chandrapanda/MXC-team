@@ -36,7 +36,6 @@ function getDogPicture() {
 
 function displayDogPicture(doggyStuff) {
     var firstDogpicture = doggyStuff.message;
-    // we should discuss changing "catFact" to a more universal name
     document.getElementById('API-container').appendChild(paragraphEl);
     paragraphEl.innerHTML ='<img src="' + firstDogpicture + '" alt="a random image of a dog">';
     paragraphEl.classList.add('dog-pictures');
@@ -49,15 +48,26 @@ function funnyJokes() {
     var jokes = "https://api.chucknorris.io/jokes/random"
     fetch(jokes)
     .then(response => response.json())
-    .then(data => console.log(data));
-    document.getElementById("button-container").style.display = "none"; 
+
+    .then(function(data) {
+        displayFunnyJoke(data)
+    });
+    
+    document.getElementById("button-container").style.display = "none";
+    document.getElementById("back-button").style.display = "block";
 };
+
+function displayFunnyJoke(funnyStuff) {
+    var firstFunnyThing = funnyStuff.value;
+    document.body.appendChild(paragraphEl);
+    paragraphEl.innerHTML = firstFunnyThing;
+}
 
 function goBackToMainPage() {
     window.location.reload();
 }
 
-dogPicsButton.addEventListener("click", getDogPicture );
+dogPicsButton.addEventListener("click", getDogPicture);
 
 catFactsButton.addEventListener("click", getCatFact);
 
