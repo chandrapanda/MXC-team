@@ -49,6 +49,7 @@ function funnyJokes() {
     var jokes = "https://api.chucknorris.io/jokes/random"
     fetch(jokes)
     .then(response => response.json())
+
     .then(function(data) {
         displayFunnyJoke(data)
     });
@@ -63,6 +64,11 @@ function displayFunnyJoke(funnyStuff) {
     document.body.appendChild(catFact);
     catFact.innerHTML = firstFunnyThing;
 }
+
+
+    .then(data => console.log(data));
+    document.getElementById("button-container").style.display = "none"; 
+};
 
 function goBackToMainPage() {
     window.location.reload();
