@@ -2,6 +2,7 @@ var catFactsButton = document.querySelector("#cat-facts");
 var dogPicsButton = document.querySelector("#dog-pics");
 var funnyJokesButton = document.querySelector("#funny-jokes");
 var catFact = document.createElement("p");
+var backButton = document.getElementById("back-button");
 
 function getCatFact() {
     var catFactAPI = "https://catfact.ninja/fact";
@@ -32,7 +33,6 @@ function goBackToMainPage() {
     window.location.reload();
 }
 
-var backButton = document.getElementById("back-button");
 backButton.addEventListener("click", goBackToMainPage);
 
 funnyJokesButton.addEventListener("click",funnyJokes);
@@ -45,8 +45,6 @@ funnyJokesButton.addEventListener("click",funnyJokes);
    };
 
 dogPicsButton.addEventListener("click", getDogPicture );
-
-// funnyJokesButton.addEventListener("click", );
 
 catFactsButton.addEventListener("click", getCatFact);
 
