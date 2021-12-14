@@ -1,7 +1,8 @@
 var catFactsButton = document.querySelector("#cat-facts");
 var dogPicsButton = document.querySelector("#dog-pics");
 var funnyJokesButton = document.querySelector("#funny-jokes");
-var catFact = document.createElement("p");
+var paragraphEl = document.createElement("p");
+var backButton = document.getElementById("back-button");
 
 function getCatFact() {
     var catFactAPI = "https://catfact.ninja/fact";
@@ -17,8 +18,8 @@ function getCatFact() {
 
 function displayCatFact(kittyStuff) {
     var firstCatFact = kittyStuff.fact;
-    document.body.appendChild(catFact);
-    catFact.innerHTML = firstCatFact;
+    document.getElementById('API-container').appendChild(paragraphEl);
+    paragraphEl.innerHTML = firstCatFact;
 }
 
 function getDogPicture() {
@@ -35,13 +36,11 @@ function getDogPicture() {
 
 function displayDogPicture(doggyStuff) {
     var firstDogpicture = doggyStuff.message;
-    // we should discuss changing "catFact" to a more universal name
-    document.body.appendChild(catFact);
-    catFact.innerHTML ='<img src="' + firstDogpicture + '" alt="a random image of a dog">';
+    document.getElementById('API-container').appendChild(paragraphEl);
+    paragraphEl.innerHTML ='<img src="' + firstDogpicture + '" alt="a random image of a dog">';
+    paragraphEl.classList.add('dog-pictures');
 }
 
-
-var backButton = document.getElementById("back-button");
 backButton.addEventListener("click", goBackToMainPage);
 
 funnyJokesButton.addEventListener("click",funnyJokes);
@@ -60,19 +59,15 @@ function funnyJokes() {
 
 function displayFunnyJoke(funnyStuff) {
     var firstFunnyThing = funnyStuff.value;
-    // we should discuss changing "catFact" to a more universal name
-    document.body.appendChild(catFact);
-    catFact.innerHTML = firstFunnyThing;
+    document.body.appendChild(paragraphEl);
+    paragraphEl.innerHTML = firstFunnyThing;
 }
-
 
 function goBackToMainPage() {
     window.location.reload();
 }
 
-dogPicsButton.addEventListener("click", getDogPicture );
-
-// funnyJokesButton.addEventListener("click", );
+dogPicsButton.addEventListener("click", getDogPicture);
 
 catFactsButton.addEventListener("click", getCatFact);
 
