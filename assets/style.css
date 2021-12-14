@@ -1,0 +1,8 @@
+#back-button {
+    display: none;
+}
+
+.navbar-item a:hover {
+    background-color: pink;
+    color: black;
+}
