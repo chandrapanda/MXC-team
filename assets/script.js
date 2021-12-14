@@ -66,10 +66,6 @@ function displayFunnyJoke(funnyStuff) {
 }
 
 
-    .then(data => console.log(data));
-    document.getElementById("button-container").style.display = "none"; 
-};
-
 function goBackToMainPage() {
     window.location.reload();
 }
