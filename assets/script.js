@@ -4,6 +4,7 @@ var funnyJokesButton = document.querySelector("#funny-jokes");
 var paragraphEl = document.createElement("p");
 var backButton = document.getElementById("back-button");
 
+
 function getCatFact() {
     var catFactAPI = "https://catfact.ninja/fact";
     fetch(catFactAPI)
@@ -13,11 +14,13 @@ function getCatFact() {
     });
 
     document.getElementById("button-container").style.display = "none";
+
     document.getElementById("back-button-container").style.display = "block";
 }
 
 function displayCatFact(kittyStuff) {
     var firstCatFact = kittyStuff.fact;
+
     document.getElementById('API-container').appendChild(paragraphEl);
     paragraphEl.classList.add('box');
     paragraphEl.innerHTML = firstCatFact;
@@ -32,6 +35,7 @@ function getDogPicture() {
     });
 
     document.getElementById("button-container").style.display = "none";
+
     document.getElementById("back-button-container").style.display = "block";
 }
 
@@ -49,7 +53,6 @@ function funnyJokes() {
     var jokes = "https://api.chucknorris.io/jokes/random"
     fetch(jokes)
     .then(response => response.json())
-
     .then(function(data) {
         displayFunnyJoke(data)
     });
@@ -60,9 +63,11 @@ function funnyJokes() {
 
 function displayFunnyJoke(funnyStuff) {
     var firstFunnyThing = funnyStuff.value;
+
     document.body.appendChild(paragraphEl);
     paragraphEl.innerHTML = firstFunnyThing;
     document.getElementById('save-button').addEventListener("click", saveFunnyJoke);
+
 }
 
 function saveFunnyJoke () {
