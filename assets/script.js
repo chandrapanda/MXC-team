@@ -13,12 +13,13 @@ function getCatFact() {
     });
 
     document.getElementById("button-container").style.display = "none";
-    document.getElementById("back-button").style.display = "block";
+    document.getElementById("back-button-container").style.display = "block";
 }
 
 function displayCatFact(kittyStuff) {
     var firstCatFact = kittyStuff.fact;
     document.getElementById('API-container').appendChild(paragraphEl);
+    paragraphEl.classList.add('box');
     paragraphEl.innerHTML = firstCatFact;
 }
 
@@ -31,7 +32,7 @@ function getDogPicture() {
     });
 
     document.getElementById("button-container").style.display = "none";
-    document.getElementById("back-button").style.display = "block";
+    document.getElementById("back-button-container").style.display = "block";
 }
 
 function displayDogPicture(doggyStuff) {
@@ -54,13 +55,18 @@ function funnyJokes() {
     });
     
     document.getElementById("button-container").style.display = "none";
-    document.getElementById("back-button").style.display = "block";
+    document.getElementById("back-button-container").style.display = "block";
 };
 
 function displayFunnyJoke(funnyStuff) {
     var firstFunnyThing = funnyStuff.value;
     document.body.appendChild(paragraphEl);
     paragraphEl.innerHTML = firstFunnyThing;
+
+}
+
+function saveFunnyJoke () {
+    var savedJokes = localStorage.setItem('savedJokes');
 }
 
 function goBackToMainPage() {
