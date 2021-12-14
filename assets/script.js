@@ -25,24 +25,37 @@ function getDogPicture() {
     var getDogAPI = "https://dog.ceo/api/breeds/image/random";
     fetch(getDogAPI)
     .then(response => response.json())
-    .then(data => console.log(data));
+    .then(function(data) {
+        displayDogPicture(data)
+    });
+
+    document.getElementById("button-container").style.display = "none";
+    document.getElementById("back-button").style.display = "block";
 }
 
-function goBackToMainPage() {
-    window.location.reload();
+function displayDogPicture(doggyStuff) {
+    var firstDogpicture = doggyStuff.message;
+    // we should discuss changing "catFact" to a more universal name
+    document.body.appendChild(catFact);
+    catFact.innerHTML ='<img src="' + firstDogpicture + '" alt="a random image of a dog">';
 }
+
 
 var backButton = document.getElementById("back-button");
 backButton.addEventListener("click", goBackToMainPage);
 
 funnyJokesButton.addEventListener("click",funnyJokes);
-   function funnyJokes() {
-       var jokes = "https://api.chucknorris.io/jokes/random"
-       fetch(jokes)
-       .then(response => response.json())
-       .then(data => console.log(data));
-       document.getElementById("button-container").style.display = "none"; 
-   };
+function funnyJokes() {
+    var jokes = "https://api.chucknorris.io/jokes/random"
+    fetch(jokes)
+    .then(response => response.json())
+    .then(data => console.log(data));
+    document.getElementById("button-container").style.display = "none"; 
+};
+
+function goBackToMainPage() {
+    window.location.reload();
+}
 
 dogPicsButton.addEventListener("click", getDogPicture );
 
