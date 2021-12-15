@@ -5,7 +5,8 @@ var paragraphEl = document.createElement("p");
 var backButton = document.getElementById("back-button");
 var localStorageJokes = localStorage.getItem('savedJokes');
 var savedJokes;
-
+var localStoragePuppers = localStorage.getItem('savedJokes');
+var savedPuppers;
 
 function getCatFact() {
     var catFactAPI = "https://catfact.ninja/fact";
@@ -50,6 +51,19 @@ function displayDogPicture(doggyStuff) {
     document.getElementById('API-container').appendChild(paragraphEl);
     paragraphEl.innerHTML ='<img src="' + firstDogpicture + '" alt="a random image of a dog">';
     paragraphEl.classList.add('dog-pictures');
+}
+
+document.getElementById('save-button-dog').addEventListener("click", saveFunnyJoke);
+
+function savePupper() {
+    if (!localStoragePuppers) {
+        savedPuppers = [];
+    } else {
+        savedPuppers = JSON.parse(localStoragePuppers);
+    }
+    savedPuppers.push(paragraphEl.innerHTML);
+    localStorage.setItem('savedJokes', JSON.stringify(savedPuppers));
+
 }
 
 backButton.addEventListener("click", goBackToMainPage);
