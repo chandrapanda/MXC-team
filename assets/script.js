@@ -3,6 +3,8 @@ var dogPicsButton = document.querySelector("#dog-pics");
 var funnyJokesButton = document.querySelector("#funny-jokes");
 var paragraphEl = document.createElement("p");
 var backButton = document.getElementById("back-button");
+var localStorageJokes = localStorage.getItem('savedJokes');
+var savedJokes;
 
 function getCatFact() {
     var catFactAPI = "https://catfact.ninja/fact";
@@ -21,6 +23,8 @@ function displayCatFact(kittyStuff) {
     document.getElementById('API-container').appendChild(paragraphEl);
     paragraphEl.classList.add('box');
     paragraphEl.innerHTML = firstCatFact;
+    document.getElementById("save-button-dog").style.display = "none";
+    document.getElementById("save-button-joke").style.display = "none";
 }
 
 function getDogPicture() {
@@ -33,6 +37,8 @@ function getDogPicture() {
 
     document.getElementById("button-container").style.display = "none";
     document.getElementById("back-button-container").style.display = "block";
+    document.getElementById("save-button-cat").style.display = "none";
+    document.getElementById("save-button-joke").style.display = "none";
 }
 
 function displayDogPicture(doggyStuff) {
@@ -56,17 +62,27 @@ function funnyJokes() {
     
     document.getElementById("button-container").style.display = "none";
     document.getElementById("back-button-container").style.display = "block";
+    document.getElementById("save-button-cat").style.display = "none";
+    document.getElementById("save-button-dog").style.display = "none";
 };
 
 function displayFunnyJoke(funnyStuff) {
     var firstFunnyThing = funnyStuff.value;
     document.body.appendChild(paragraphEl);
+    paragraphEl.classList.add('box');
     paragraphEl.innerHTML = firstFunnyThing;
-    document.getElementById('save-button').addEventListener("click", saveFunnyJoke);
 }
+//joke save button
+document.getElementById('save-button-joke').addEventListener("click", saveFunnyJoke);
 
-function saveFunnyJoke () {
-    var savedJokes = localStorage.setItem('savedJokes');
+function saveFunnyJoke() {
+    if (!localStorageJokes) {
+        savedJokes = [];
+    } else {
+        savedJokes = JSON.parse(localStorageJokes);
+    }
+    savedJokes.push(paragraphEl.innerHTML);
+    localStorage.setItem('savedJokes', JSON.stringify(savedJokes));
 
 }
 
