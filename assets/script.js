@@ -26,8 +26,6 @@ function getCatFact() {
     document.getElementById("back-button-container").style.display = "block";
 }
 
-
-
 function displayCatFact(kittyStuff) {
     var firstCatFact = kittyStuff.fact;
 
@@ -47,7 +45,6 @@ function getDogPicture() {
     });
 
     document.getElementById("button-container").style.display = "none";
-
     document.getElementById("back-button-container").style.display = "block";
     document.getElementById("save-button-cat").style.display = "none";
     document.getElementById("save-button-joke").style.display = "none";
@@ -60,7 +57,7 @@ function displayDogPicture(doggyStuff) {
     paragraphEl.classList.add('dog-pictures');
 }
 
-document.getElementById('save-button-dog').addEventListener("click", saveFunnyJoke);
+document.getElementById('save-button-dog').addEventListener("click", savePupper);
 
 function savePupper() {
     if (!localStoragePuppers) {
@@ -69,8 +66,7 @@ function savePupper() {
         savedPuppers = JSON.parse(localStoragePuppers);
     }
     savedPuppers.push(paragraphEl.innerHTML);
-    localStorage.setItem('savedJokes', JSON.stringify(savedPuppers));
-
+    localStorage.setItem('savedPuppers', JSON.stringify(savedPuppers));
 }
 
 backButton.addEventListener("click", goBackToMainPage);
