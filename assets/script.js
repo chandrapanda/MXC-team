@@ -70,7 +70,6 @@ function savePupper() {
     }
     savedPuppers.push(paragraphEl.innerHTML);
     localStorage.setItem('savedPuppers', JSON.stringify(savedPuppers));
-
 }
 
 backButton.addEventListener("click", goBackToMainPage);
@@ -144,6 +143,7 @@ function renderSavedPuppers (){
 function goBackToMainPage() {
     window.location.reload();
 }
+
 dogPicsButton.addEventListener("click", getDogPicture);
 
 catFactsButton.addEventListener("click", getCatFact);
