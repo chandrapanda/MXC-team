@@ -15,7 +15,10 @@ var savedPuppers;
 // Display set Items 
 document.getElementById("saved-items").addEventListener("click",displaySavedItems);
 function displaySavedItems() {
- document.getElementById("saved-stuff").style.display="block";
+ document.getElementById("saved-stuff").style.display= "block";
+ renderSavedCats()
+ renderSavedJokes()
+ renderSavedPuppers()
 }
 
 
@@ -144,6 +147,16 @@ function renderSavedPuppers (){
         var listItem = document.createElement ("li");
         listItem.innerHTML = savedPupperPics[index];
         document.getElementById("dog-pic-list").appendChild(listItem);
+    }
+}
+
+function renderSavedCats (){
+    var savedCatFacts = JSON.parse (localStorageCat);
+
+    for (var index = 0; index < savedCatFacts.length; index++) {
+        var listItem = document.createElement ("li");
+        listItem.innerHTML = savedCatFacts[index];
+        document.getElementById("cat-fact-list").appendChild(listItem);
     }
 }
 
