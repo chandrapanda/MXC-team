@@ -12,6 +12,13 @@ var savedCat;
 var localStoragePuppers = localStorage.getItem('savedJokes');
 var savedPuppers;
 
+// Display set Items 
+document.getElementById("saved-items").addEventListener("click",displaySavedItems);
+function displaySavedItems() {
+ document.getElementById("saved-stuff").style.display="block";
+}
+
+
 function getCatFact() {
     var catFactAPI = "https://catfact.ninja/fact";
     fetch(catFactAPI)
