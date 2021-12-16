@@ -9,7 +9,7 @@ var savedJokes;
 var localStorageCat = localStorage.getItem("savedCat");
 var savedCat;
 
-var localStoragePuppers = localStorage.getItem('savedJokes');
+var localStoragePuppers = localStorage.getItem('savedPuppers');
 var savedPuppers;
 
 function getCatFact() {
@@ -66,7 +66,7 @@ function savePupper() {
         savedPuppers = JSON.parse(localStoragePuppers);
     }
     savedPuppers.push(paragraphEl.innerHTML);
-    localStorage.setItem('savedPuppers', JSON.stringify(savedPuppers));
+    localStorage.setItem('savedPupper', JSON.stringify(savedPuppers));
 }
 
 backButton.addEventListener("click", goBackToMainPage);
