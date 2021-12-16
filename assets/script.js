@@ -1,7 +1,13 @@
 var catFactsButton = document.querySelector("#cat-facts");
 var dogPicsButton = document.querySelector("#dog-pics");
 var funnyJokesButton = document.querySelector("#funny-jokes");
-var catFact = document.createElement("p");
+var paragraphEl = document.createElement("p");
+var backButton = document.getElementById("back-button");
+var localStorageJokes = localStorage.getItem('savedJokes');
+var savedJokes;
+var localStorageCat = localStorage.getItem("savedCat");
+var savedCat;
+
 
 function getCatFact() {
     var catFactAPI = "https://catfact.ninja/fact";
@@ -13,19 +19,20 @@ function getCatFact() {
 
 
     document.getElementById("button-container").style.display = "none";
-    document.getElementById("back-button").style.display = "block";
+
+    document.getElementById("back-button-container").style.display = "block";
 }
 
-function savedCatFact() {
-    if (!localStorage.setItem()) {
 
-    }
-}
 
 function displayCatFact(kittyStuff) {
     var firstCatFact = kittyStuff.fact;
-    document.body.appendChild(catFact);
-    catFact.innerHTML = firstCatFact;
+
+    document.getElementById('API-container').appendChild(paragraphEl);
+    paragraphEl.classList.add('box');
+    paragraphEl.innerHTML = firstCatFact;
+    document.getElementById("save-button-dog").style.display = "none";
+    document.getElementById("save-button-joke").style.display = "none";
 }
 
 function getDogPicture() {
@@ -37,18 +44,19 @@ function getDogPicture() {
     });
 
     document.getElementById("button-container").style.display = "none";
-    document.getElementById("back-button").style.display = "block";
+
+    document.getElementById("back-button-container").style.display = "block";
+    document.getElementById("save-button-cat").style.display = "none";
+    document.getElementById("save-button-joke").style.display = "none";
 }
 
 function displayDogPicture(doggyStuff) {
     var firstDogpicture = doggyStuff.message;
-    // we should discuss changing "catFact" to a more universal name
-    document.body.appendChild(catFact);
-    catFact.innerHTML ='<img src="' + firstDogpicture + '" alt="a random image of a dog">';
+    document.getElementById('API-container').appendChild(paragraphEl);
+    paragraphEl.innerHTML ='<img src="' + firstDogpicture + '" alt="a random image of a dog">';
+    paragraphEl.classList.add('dog-pictures');
 }
 
-
-var backButton = document.getElementById("back-button");
 backButton.addEventListener("click", goBackToMainPage);
 
 funnyJokesButton.addEventListener("click",funnyJokes);
@@ -56,30 +64,52 @@ function funnyJokes() {
     var jokes = "https://api.chucknorris.io/jokes/random"
     fetch(jokes)
     .then(response => response.json())
-
     .then(function(data) {
         displayFunnyJoke(data)
     });
     
     document.getElementById("button-container").style.display = "none";
-    document.getElementById("back-button").style.display = "block";
+    document.getElementById("back-button-container").style.display = "block";
+    document.getElementById("save-button-cat").style.display = "none";
+    document.getElementById("save-button-dog").style.display = "none";
 };
 
 function displayFunnyJoke(funnyStuff) {
     var firstFunnyThing = funnyStuff.value;
-    // we should discuss changing "catFact" to a more universal name
-    document.body.appendChild(catFact);
-    catFact.innerHTML = firstFunnyThing;
-}
 
+    document.body.appendChild(paragraphEl);
+    paragraphEl.classList.add('box');
+    paragraphEl.innerHTML = firstFunnyThing;
+}
+//joke save button
+document.getElementById('save-button-joke').addEventListener("click", saveFunnyJoke);
+
+function saveFunnyJoke() {
+    if (!localStorageJokes) {
+        savedJokes = [];
+    } else {
+        savedJokes = JSON.parse(localStorageJokes);
+    }
+    savedJokes.push(paragraphEl.innerHTML);
+    localStorage.setItem('savedJokes', JSON.stringify(savedJokes));
+
+}
+function savedCatFact() {
+    if (!localStorageCat) {
+       savedCat = [];  
+    } else {
+        savedCat = JSON.parse(localStorageCat);
+    }
+    savedCat.push(paragraphEl.innerHTML);
+    localStorage.setItem('savedCat', JSON.stringify(savedCat));
+}
+document.getElementById('save-button-cat').addEventListener("click", savedCatFact);
 
 function goBackToMainPage() {
     window.location.reload();
 }
 
-dogPicsButton.addEventListener("click", getDogPicture );
-
-// funnyJokesButton.addEventListener("click", );
+dogPicsButton.addEventListener("click", getDogPicture);
 
 catFactsButton.addEventListener("click", getCatFact);
 
