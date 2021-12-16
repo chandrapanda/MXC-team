@@ -60,7 +60,7 @@ function displayDogPicture(doggyStuff) {
     paragraphEl.classList.add('dog-pictures');
 }
 
-document.getElementById('save-button-dog').addEventListener("click", saveFunnyJoke);
+document.getElementById('save-button-dog').addEventListener("click", savePupper);
 
 function savePupper() {
     if (!localStoragePuppers) {
@@ -69,7 +69,7 @@ function savePupper() {
         savedPuppers = JSON.parse(localStoragePuppers);
     }
     savedPuppers.push(paragraphEl.innerHTML);
-    localStorage.setItem('savedJokes', JSON.stringify(savedPuppers));
+    localStorage.setItem('savedPupper', JSON.stringify(savedPuppers));
 
 }
 
