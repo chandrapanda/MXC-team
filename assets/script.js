@@ -9,7 +9,7 @@ var savedJokes;
 var localStorageCat = localStorage.getItem("savedCat");
 var savedCat;
 
-var localStoragePuppers = localStorage.getItem('savedJokes');
+var localStoragePuppers = localStorage.getItem('savedPuppers');
 var savedPuppers;
 
 function getCatFact() {
@@ -60,7 +60,7 @@ function displayDogPicture(doggyStuff) {
     paragraphEl.classList.add('dog-pictures');
 }
 
-document.getElementById('save-button-dog').addEventListener("click", saveFunnyJoke);
+document.getElementById('save-button-dog').addEventListener("click", savePupper);
 
 function savePupper() {
     if (!localStoragePuppers) {
@@ -69,7 +69,7 @@ function savePupper() {
         savedPuppers = JSON.parse(localStoragePuppers);
     }
     savedPuppers.push(paragraphEl.innerHTML);
-    localStorage.setItem('savedJokes', JSON.stringify(savedPuppers));
+    localStorage.setItem('savedPuppers', JSON.stringify(savedPuppers));
 
 }
 
@@ -121,7 +121,7 @@ function savedCatFact() {
 }
 document.getElementById('save-button-cat').addEventListener("click", savedCatFact);
 
-function renderSavedJokes() {
+ function renderSavedJokes() {
     var savedJokeList = JSON.parse(localStorageJokes);
 
     for (var index = 0; index < savedJokeList.length; index++) {
@@ -131,12 +131,22 @@ function renderSavedJokes() {
     } 
 }
 
+function renderSavedPuppers (){
+    var savedPupperPics = JSON.parse (localStoragePuppers);
+
+    for (var index = 0; index < savedPupperPics.length; index++) {
+        var listItem = document.createElement ("li");
+        listItem.innerHTML = savedPupperPics[index];
+        document.getElementById("dog-pic-list").appendChild(listItem);
+    }
+}
+
 function goBackToMainPage() {
     window.location.reload();
 }
-renderSavedJokes();
 dogPicsButton.addEventListener("click", getDogPicture);
 
 catFactsButton.addEventListener("click", getCatFact);
 
 console.log("Hey - we made it to the end of our JS!");
+
