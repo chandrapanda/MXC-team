@@ -12,6 +12,13 @@ var savedCat;
 var localStoragePuppers = localStorage.getItem('savedPuppers');
 var savedPuppers;
 
+// Display set Items 
+document.getElementById("saved-items").addEventListener("click",displaySavedItems);
+function displaySavedItems() {
+ document.getElementById("saved-stuff").style.display="block";
+}
+
+
 function getCatFact() {
     var catFactAPI = "https://catfact.ninja/fact";
     fetch(catFactAPI)
@@ -66,7 +73,11 @@ function savePupper() {
         savedPuppers = JSON.parse(localStoragePuppers);
     }
     savedPuppers.push(paragraphEl.innerHTML);
+<<<<<<< HEAD
     localStorage.setItem('savedPupper', JSON.stringify(savedPuppers));
+=======
+    localStorage.setItem('savedPuppers', JSON.stringify(savedPuppers));
+>>>>>>> dd7cc9469dda5209601607087e86022c7a3f5783
 }
 
 backButton.addEventListener("click", goBackToMainPage);
@@ -117,7 +128,7 @@ function savedCatFact() {
 }
 document.getElementById('save-button-cat').addEventListener("click", savedCatFact);
 
-function renderSavedJokes() {
+ function renderSavedJokes() {
     var savedJokeList = JSON.parse(localStorageJokes);
 
     for (var index = 0; index < savedJokeList.length; index++) {
@@ -127,12 +138,23 @@ function renderSavedJokes() {
     } 
 }
 
+function renderSavedPuppers (){
+    var savedPupperPics = JSON.parse (localStoragePuppers);
+
+    for (var index = 0; index < savedPupperPics.length; index++) {
+        var listItem = document.createElement ("li");
+        listItem.innerHTML = savedPupperPics[index];
+        document.getElementById("dog-pic-list").appendChild(listItem);
+    }
+}
+
 function goBackToMainPage() {
     window.location.reload();
 }
-renderSavedJokes();
+
 dogPicsButton.addEventListener("click", getDogPicture);
 
 catFactsButton.addEventListener("click", getCatFact);
 
 console.log("Hey - we made it to the end of our JS!");
+
