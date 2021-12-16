@@ -11,8 +11,15 @@ function getCatFact() {
         displayCatFact(data)
     });
 
+
     document.getElementById("button-container").style.display = "none";
     document.getElementById("back-button").style.display = "block";
+}
+
+function savedCatFact() {
+    if (!localStorage.setItem()) {
+
+    }
 }
 
 function displayCatFact(kittyStuff) {
@@ -65,10 +72,6 @@ function displayFunnyJoke(funnyStuff) {
     catFact.innerHTML = firstFunnyThing;
 }
 
-
-    .then(data => console.log(data));
-    document.getElementById("button-container").style.display = "none"; 
-};
 
 function goBackToMainPage() {
     window.location.reload();
