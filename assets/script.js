@@ -9,7 +9,7 @@ var savedJokes;
 var localStorageCat = localStorage.getItem("savedCat");
 var savedCat;
 
-var localStoragePuppers = localStorage.getItem('savedJokes');
+var localStoragePuppers = localStorage.getItem('savedPuppers');
 var savedPuppers;
 
 function getCatFact() {
@@ -69,8 +69,7 @@ function savePupper() {
         savedPuppers = JSON.parse(localStoragePuppers);
     }
     savedPuppers.push(paragraphEl.innerHTML);
-    localStorage.setItem('savedPupper', JSON.stringify(savedPuppers));
-
+    localStorage.setItem('savedPuppers', JSON.stringify(savedPuppers));
 }
 
 backButton.addEventListener("click", goBackToMainPage);
@@ -134,7 +133,7 @@ function renderSavedJokes() {
 function goBackToMainPage() {
     window.location.reload();
 }
-renderSavedJokes();
+
 dogPicsButton.addEventListener("click", getDogPicture);
 
 catFactsButton.addEventListener("click", getCatFact);
