@@ -16,6 +16,9 @@ var savedPuppers;
 document.getElementById("saved-items").addEventListener("click",displaySavedItems);
 function displaySavedItems() {
  document.getElementById("saved-stuff").style.display= "block";
+ renderSavedCats()
+ renderSavedJokes()
+ renderSavedPuppers()
 }
 
 
