@@ -5,6 +5,10 @@ var paragraphEl = document.createElement("p");
 var backButton = document.getElementById("back-button");
 var localStorageJokes = localStorage.getItem('savedJokes');
 var savedJokes;
+
+var localStorageCat = localStorage.getItem("savedCat");
+var savedCat;
+
 var localStoragePuppers = localStorage.getItem('savedJokes');
 var savedPuppers;
 
@@ -16,10 +20,13 @@ function getCatFact() {
         displayCatFact(data)
     });
 
+
     document.getElementById("button-container").style.display = "none";
 
     document.getElementById("back-button-container").style.display = "block";
 }
+
+
 
 function displayCatFact(kittyStuff) {
     var firstCatFact = kittyStuff.fact;
@@ -103,6 +110,16 @@ function saveFunnyJoke() {
     localStorage.setItem('savedJokes', JSON.stringify(savedJokes));
 
 }
+function savedCatFact() {
+    if (!localStorageCat) {
+       savedCat = [];  
+    } else {
+        savedCat = JSON.parse(localStorageCat);
+    }
+    savedCat.push(paragraphEl.innerHTML);
+    localStorage.setItem('savedCat', JSON.stringify(savedCat));
+}
+document.getElementById('save-button-cat').addEventListener("click", savedCatFact);
 
 function goBackToMainPage() {
     window.location.reload();
