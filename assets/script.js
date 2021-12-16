@@ -6,6 +6,12 @@ var backButton = document.getElementById("back-button");
 var localStorageJokes = localStorage.getItem('savedJokes');
 var savedJokes;
 
+var localStorageCat = localStorage.getItem("savedCat");
+var savedCat;
+
+var localStoragePuppers = localStorage.getItem('savedJokes');
+var savedPuppers;
+
 function getCatFact() {
     var catFactAPI = "https://catfact.ninja/fact";
     fetch(catFactAPI)
@@ -14,12 +20,17 @@ function getCatFact() {
         displayCatFact(data)
     });
 
+
     document.getElementById("button-container").style.display = "none";
+
     document.getElementById("back-button-container").style.display = "block";
 }
 
+
+
 function displayCatFact(kittyStuff) {
     var firstCatFact = kittyStuff.fact;
+
     document.getElementById('API-container').appendChild(paragraphEl);
     paragraphEl.classList.add('box');
     paragraphEl.innerHTML = firstCatFact;
@@ -36,6 +47,7 @@ function getDogPicture() {
     });
 
     document.getElementById("button-container").style.display = "none";
+
     document.getElementById("back-button-container").style.display = "block";
     document.getElementById("save-button-cat").style.display = "none";
     document.getElementById("save-button-joke").style.display = "none";
@@ -48,6 +60,19 @@ function displayDogPicture(doggyStuff) {
     paragraphEl.classList.add('dog-pictures');
 }
 
+document.getElementById('save-button-dog').addEventListener("click", saveFunnyJoke);
+
+function savePupper() {
+    if (!localStoragePuppers) {
+        savedPuppers = [];
+    } else {
+        savedPuppers = JSON.parse(localStoragePuppers);
+    }
+    savedPuppers.push(paragraphEl.innerHTML);
+    localStorage.setItem('savedJokes', JSON.stringify(savedPuppers));
+
+}
+
 backButton.addEventListener("click", goBackToMainPage);
 
 funnyJokesButton.addEventListener("click",funnyJokes);
@@ -55,7 +80,6 @@ function funnyJokes() {
     var jokes = "https://api.chucknorris.io/jokes/random"
     fetch(jokes)
     .then(response => response.json())
-
     .then(function(data) {
         displayFunnyJoke(data)
     });
@@ -68,6 +92,7 @@ function funnyJokes() {
 
 function displayFunnyJoke(funnyStuff) {
     var firstFunnyThing = funnyStuff.value;
+
     document.body.appendChild(paragraphEl);
     paragraphEl.classList.add('box');
     paragraphEl.innerHTML = firstFunnyThing;
@@ -85,6 +110,16 @@ function saveFunnyJoke() {
     localStorage.setItem('savedJokes', JSON.stringify(savedJokes));
 
 }
+function savedCatFact() {
+    if (!localStorageCat) {
+       savedCat = [];  
+    } else {
+        savedCat = JSON.parse(localStorageCat);
+    }
+    savedCat.push(paragraphEl.innerHTML);
+    localStorage.setItem('savedCat', JSON.stringify(savedCat));
+}
+document.getElementById('save-button-cat').addEventListener("click", savedCatFact);
 
 function renderSavedJokes() {
     var savedJokeList = JSON.parse(localStorageJokes);
