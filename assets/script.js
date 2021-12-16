@@ -86,10 +86,20 @@ function saveFunnyJoke() {
 
 }
 
+function renderSavedJokes() {
+    var savedJokeList = JSON.parse(localStorageJokes);
+
+    for (var index = 0; index < savedJokeList.length; index++) {
+        var listItem = document.createElement("li");
+        listItem.innerHTML = savedJokeList[index];
+        document.getElementById("joke-list").appendChild(listItem);
+    } 
+}
+
 function goBackToMainPage() {
     window.location.reload();
 }
-
+renderSavedJokes();
 dogPicsButton.addEventListener("click", getDogPicture);
 
 catFactsButton.addEventListener("click", getCatFact);
