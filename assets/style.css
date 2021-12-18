@@ -1,10 +1,12 @@
 html, body {
-    height: 100%;
+    height: 100%; 
 }
 
 * {
-    background-color: #8caec3;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #b3c8d6;
+    font-size: 20px;
+    font-family: 'Bitter', serif;
+    font-family: 'Rubik', sans-serif;;
 }
 
 #save-button-container {
@@ -57,7 +59,7 @@ html, body {
 }
 
 .navbar {
-    background-color: #8caec3;
+    background-color: #b3c8d6;
 
 }
 
