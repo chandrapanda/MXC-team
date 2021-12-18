@@ -130,7 +130,7 @@ function savedCatFact() {
         return;
     }
     else {
-        document.getElementById('joke-list').innerHTML = "Here are your saved facts";
+        document.getElementById('joke-list').innerHTML = "Here are your saved jokes";
 
     }
     for (var index = 0; index < savedJokeList.length; index++) {
@@ -146,7 +146,7 @@ function renderSavedPuppers (){
         return;
     }
     else {
-        document.getElementById('dog-pic-list').innerHTML = "Here are your saved facts";
+        document.getElementById('dog-pic-list').innerHTML = "Here are your saved pictures";
 
     }
     for (var index = 0; index < savedPupperPics.length; index++) {
