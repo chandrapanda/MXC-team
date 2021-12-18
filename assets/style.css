@@ -1,4 +1,8 @@
-#back-button-container {
+#save-button-container {
+    justify-content: center;
+}
+
+.save {
     display: none;
 }
 
