@@ -1,14 +1,19 @@
-#save-button-container {
-    justify-content: center;
+* {
+    background-color: orange;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.save {
+#back-button-container {
     display: none;
 }
 
 .dog-pictures {
     width: 500px;
     height: auto;
+}
+
+.save {
+    display: none;
 }
 
 
@@ -22,3 +27,23 @@
     display: none;
 }
 
+.hero-body {
+    text-align: center;
+}
+
+#button-container {
+    text-align: center;
+
+}
+
+.footer {
+    padding: 30rem 1.5rem 10rem; 
+    /* padding: 5px; */
+    width: 100%;
+    
+}
+
+.navbar {
+    background-color: orange;
+
+}
