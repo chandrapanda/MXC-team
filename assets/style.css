@@ -8,8 +8,13 @@
 }
 
 .dog-pictures {
-    width: 500px;
+    width: auto;
     height: auto;
+    max-height: 75%;
+}
+
+#save-button-container {
+    text-align: center;
 }
 
 .save {
@@ -37,10 +42,15 @@
 }
 
 .footer {
-    padding: 30rem 1.5rem 10rem; 
+    padding: 1rem;
     /* padding: 5px; */
     width: 100%;
     
+}
+
+#API-container {
+    justify-content: center;
+    text-align: center;
 }
 
 .navbar {

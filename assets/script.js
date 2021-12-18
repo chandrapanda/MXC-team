@@ -87,7 +87,7 @@ function funnyJokes() {
 
 function displayFunnyJoke(funnyStuff) {
     var firstFunnyThing = funnyStuff.value;
-    document.body.appendChild(paragraphEl);
+    document.getElementById('API-container').appendChild(paragraphEl);
     paragraphEl.classList.add('box');
     paragraphEl.innerHTML = firstFunnyThing;
 }
