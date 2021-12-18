@@ -132,6 +132,9 @@ document.getElementById('save-button-cat').addEventListener("click", savedCatFac
 
  function renderSavedJokes() {
     var savedJokeList = JSON.parse(localStorageJokes);
+    if (!savedJokeList) {
+        return;
+    }
 
     for (var index = 0; index < savedJokeList.length; index++) {
         var listItem = document.createElement("li");
@@ -142,6 +145,9 @@ document.getElementById('save-button-cat').addEventListener("click", savedCatFac
 
 function renderSavedPuppers (){
     var savedPupperPics = JSON.parse (localStoragePuppers);
+    if (!savedPupperPics){
+        return;
+    }
 
     for (var index = 0; index < savedPupperPics.length; index++) {
         var listItem = document.createElement ("li");
@@ -152,6 +158,9 @@ function renderSavedPuppers (){
 
 function renderSavedCats (){
     var savedCatFacts = JSON.parse (localStorageCat);
+    if (!savedCatFacts){
+        return;
+    }
 
     for (var index = 0; index < savedCatFacts.length; index++) {
         var listItem = document.createElement ("li");
