@@ -3,6 +3,7 @@ var catFactsButton = document.querySelector("#cat-facts");
 var dogPicsButton = document.querySelector("#dog-pics");
 var funnyJokesButton = document.querySelector("#funny-jokes");
 var paragraphEl = document.createElement("p");
+paragraphEl.classList.add('middle-area');
 var homeButton = document.getElementById("home-button");
 
 //Storage Tools
@@ -87,7 +88,7 @@ function funnyJokes() {
 
 function displayFunnyJoke(funnyStuff) {
     var firstFunnyThing = funnyStuff.value;
-    document.body.appendChild(paragraphEl);
+    document.getElementById('API-container').appendChild(paragraphEl);
     paragraphEl.classList.add('box');
     paragraphEl.innerHTML = firstFunnyThing;
 }
