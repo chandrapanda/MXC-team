@@ -3,7 +3,6 @@ var catFactsButton = document.querySelector("#cat-facts");
 var dogPicsButton = document.querySelector("#dog-pics");
 var funnyJokesButton = document.querySelector("#funny-jokes");
 var paragraphEl = document.createElement("p");
-var backButton = document.getElementById("back-button");
 var homeButton = document.getElementById("home-button");
 
 //Storage Tools
@@ -16,7 +15,6 @@ var savedPuppers;
 
 //Button event listeners
 homeButton.addEventListener("click", goBackToMainPage);
-backButton.addEventListener("click", goBackToMainPage);
 funnyJokesButton.addEventListener("click",funnyJokes);
 dogPicsButton.addEventListener("click", getDogPicture);
 catFactsButton.addEventListener("click", getCatFact);
@@ -35,14 +33,15 @@ function displaySavedItems() {
 
 //Get and display a cat fact
 function getCatFact() {
+    document.getElementById("save-button-cat").style.display = "block";
+    document.getElementById("save-button-dog").style.display = "none";
+    document.getElementById("save-button-joke").style.display = "none";
     var catFactAPI = "https://catfact.ninja/fact";
     fetch(catFactAPI)
     .then(response => response.json())
     .then(function(data) {
         displayCatFact(data)
     });
-    document.getElementById("button-container").style.display = "none";
-    document.getElementById("back-button-container").style.display = "block";
 }
 
 function displayCatFact(kittyStuff) {
@@ -50,23 +49,19 @@ function displayCatFact(kittyStuff) {
     document.getElementById('API-container').appendChild(paragraphEl);
     paragraphEl.classList.add('box');
     paragraphEl.innerHTML = firstCatFact;
-    document.getElementById("save-button-dog").style.display = "none";
-    document.getElementById("save-button-joke").style.display = "none";
 }
 
 //Get and display a dog picture
 function getDogPicture() {
+    document.getElementById("save-button-dog").style.display = "block";
+    document.getElementById("save-button-cat").style.display = "none";
+    document.getElementById("save-button-joke").style.display = "none";
     var getDogAPI = "https://dog.ceo/api/breeds/image/random";
     fetch(getDogAPI)
     .then(response => response.json())
     .then(function(data) {
         displayDogPicture(data)
     });
-
-    document.getElementById("button-container").style.display = "none";
-    document.getElementById("back-button-container").style.display = "block";
-    document.getElementById("save-button-cat").style.display = "none";
-    document.getElementById("save-button-joke").style.display = "none";
 }
 
 function displayDogPicture(doggyStuff) {
@@ -83,8 +78,8 @@ function funnyJokes() {
     .then(function(data) {
         displayFunnyJoke(data)
     });
-    document.getElementById("button-container").style.display = "none";
-    document.getElementById("back-button-container").style.display = "block";
+
+    document.getElementById("save-button-joke").style.display = "block";
     document.getElementById("save-button-cat").style.display = "none";
     document.getElementById("save-button-dog").style.display = "none";
 };
