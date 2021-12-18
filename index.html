@@ -19,17 +19,14 @@
   </head>
 
   <header class="navbar row col-3">
-    <a class="navbar-item">
+    <a id ="home-button" class="navbar-item">
      Home
     </a> 
-    <a class="navbar-item">
+    <a href="#footer" class="navbar-item">
       About
     </a>
     <a  id="saved-items" class="navbar-item">
       Saved Items 
-    </a>
-    <a href="#footer" class="navbar-item">
-      Contact
     </a>
   </header>
   <body>
@@ -50,18 +47,16 @@
             Funny Jokes
           </button>
         </div>
-        <div id="back-button-container">
-          <button id="back-button" class="button is-info is-light">
-          Back</button>
-          <button id="save-button-cat" class="button is-info is-light">Save</button>
-          <button id="save-button-dog" class="button is-info is-light">Save</button>
-          <button id="save-button-joke" class="button is-info is-light">Save</button>
+        <div id="save-button-container">
+          <button id="save-button-cat" class="button is-info is-light save">Save</button>
+          <button id="save-button-dog" class="button is-info is-light save">Save</button>
+          <button id="save-button-joke" class="button is-info is-light save">Save</button>
         </div>
       </div>
       <div id="saved-stuff">
-        <ul id="joke-list"></ul>
-        <ul id="cat-fact-list"></ul>
-        <ul id="dog-pic-list"></ul>
+        <ul id="joke-list">You have no saved jokes</ul>
+        <ul id="cat-fact-list">You have saved facts</ul>
+        <ul id="dog-pic-list">You have no saved pictures</ul>
       </div>
       </section>
       <footer class="footer" id="footer">
