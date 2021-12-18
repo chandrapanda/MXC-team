@@ -12,6 +12,10 @@
     height: auto;
 }
 
+.save {
+    display: none;
+}
+
 
 @media only screen and (max-width: 962px) {
     .dog-pictures {
@@ -29,12 +33,14 @@
 
 #button-container {
     text-align: center;
-    
+
 }
 
 .footer {
-    padding: 5px;
+    padding: 30rem 1.5rem 10rem; 
+    /* padding: 5px; */
     width: 100%;
+    
 }
 
 .navbar {
