@@ -131,7 +131,7 @@ function savedCatFact() {
 
 //Render saved items to page 
 function renderSavedJokes() {
-    document.getElementById('joke-list').innerHTML = "Here are your saved jokes";
+    document.getElementById('joke-list').innerHTML = "Here are your saved jokes:";
 
     for (var index = 0; index < savedJokes.length; index++) {
         var listItem = document.createElement("li");
@@ -141,7 +141,7 @@ function renderSavedJokes() {
 }
 
 function renderSavedPuppers() {
-    document.getElementById('dog-pic-list').innerHTML = "Here are your saved pictures";
+    document.getElementById('dog-pic-list').innerHTML = "Here are your saved pictures:";
 
     for (var index = 0; index < savedPuppers.length; index++) {
         var listItem = document.createElement("li");
@@ -151,7 +151,7 @@ function renderSavedPuppers() {
 }
 
 function renderSavedCats() {
-    document.getElementById('cat-fact-list').innerHTML = "Here are your saved facts";
+    document.getElementById('cat-fact-list').innerHTML = "Here are your saved facts:";
 
     for (var index = 0; index < savedCat.length; index++) {
         var listItem = document.createElement("li");

@@ -11,6 +11,7 @@ html, body {
 
 #save-button-container {
     text-align: center;
+    padding: 10px 47%;
 }
 
 .middle-area {
@@ -60,4 +61,8 @@ html, body {
 .navbar {
     background-color: #b3c8d6;
 
+}
+
+#dog-pic-list {
+    display: block;
 }
