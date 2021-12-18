@@ -1,3 +1,8 @@
+* {
+    background-color: orange;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 #back-button-container {
     display: none;
 }
@@ -16,4 +21,22 @@
 }
 #saved-stuff {
     display: none;
+}
+
+.hero-body {
+    text-align: center;
+}
+
+#button-container {
+    text-align: center;
+}
+
+.footer {
+    padding: 500px;
+    width: 100%;
+}
+
+.navbar {
+    background-color: orange;
+
 }
