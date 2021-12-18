@@ -134,7 +134,10 @@ function savedCatFact() {
     if (!savedJokeList) {
         return;
     }
+    else {
+        document.getElementById('joke-list').innerHTML = "Here are your saved facts";
 
+    }
     for (var index = 0; index < savedJokeList.length; index++) {
         var listItem = document.createElement("li");
         listItem.innerHTML = savedJokeList[index];
@@ -147,7 +150,10 @@ function renderSavedPuppers (){
     if (!savedPupperPics){
         return;
     }
+    else {
+        document.getElementById('dog-pic-list').innerHTML = "Here are your saved facts";
 
+    }
     for (var index = 0; index < savedPupperPics.length; index++) {
         var listItem = document.createElement ("li");
         listItem.innerHTML = savedPupperPics[index];
@@ -160,7 +166,10 @@ function renderSavedCats (){
     if (!savedCatFacts){
         return;
     }
+    else {
+        document.getElementById('cat-fact-list').innerHTML = "Here are your saved facts";
 
+    }
     for (var index = 0; index < savedCatFacts.length; index++) {
         var listItem = document.createElement ("li");
         listItem.innerHTML = savedCatFacts[index];
