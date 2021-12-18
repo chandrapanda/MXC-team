@@ -1,5 +1,4 @@
 # MXC-team
-
 Don't get bored!
 
 ## User Story
