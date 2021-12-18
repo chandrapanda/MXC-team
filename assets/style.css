@@ -1,14 +1,23 @@
+html, body {
+    height: 100%;
+}
+
 * {
-    background-color: orange;
+    background-color: #8caec3;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-#back-button-container {
+#save-button-container {
     display: none;
+    text-align: center;
+}
+
+.middle-area {
+    text-align: center;
 }
 
 .dog-pictures {
-    width: 500px;
+    width: auto;
     height: auto;
 }
 
@@ -34,16 +43,20 @@
 #button-container {
     text-align: center;
 
+
 }
 
 .footer {
-    padding: 30rem 1.5rem 10rem; 
-    /* padding: 5px; */
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    padding: 5px;
     width: 100%;
+
     
 }
 
 .navbar {
-    background-color: orange;
+    background-color: #8caec3;
 
 }
