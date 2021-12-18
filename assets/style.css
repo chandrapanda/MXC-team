@@ -1,0 +1,61 @@
+html, body {
+    height: 100%;
+}
+
+* {
+    background-color: #8caec3;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#save-button-container {
+    text-align: center;
+}
+
+.middle-area {
+    text-align: center;
+}
+
+.dog-pictures {
+    width: auto;
+    height: auto;
+}
+
+.save {
+    display: none;
+}
+
+
+@media only screen and (max-width: 962px) {
+    .dog-pictures {
+        width: 250px;
+        height: auto;
+    }
+}
+#saved-stuff {
+    display: none;
+}
+
+.hero-body {
+    text-align: center;
+}
+
+#button-container {
+    text-align: center;
+
+
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    padding: 5px;
+    width: 100%;
+
+    
+}
+
+.navbar {
+    background-color: #8caec3;
+
+}
