@@ -5,19 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Don't Get Eliminated</title>
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel = "stylesheet" href = "assets/style.css">
 </head>
 <body>
-
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
-    />
-    <link rel="stylesheet" type="text/css" href="./assets/style.css" />
   </head>
-
   <header class="navbar row col-3">
     <a id ="home-button" class="navbar-item">
      Home
@@ -53,10 +45,10 @@
           <button id="save-button-joke" class="button is-info is-light save">Save</button>
         </div>
       </div>
-      <div id="saved-stuff">
-        <ul id="joke-list">You have no saved jokes</ul>
-        <ul id="cat-fact-list">You have saved facts</ul>
-        <ul id="dog-pic-list">You have no saved pictures</ul>
+      <div id="saved-stuff" class="columns">
+        <ul id="joke-list" class="column"><li>You have no saved jokes</li></ul>
+        <ul id="cat-fact-list" class="column"><li>You have no saved facts</li></ul>
+        <ul id="dog-pic-list" class="column"><li>You have no saved pictures</li></ul>
       </div>
       </section>
     <script src="assets/script.js"></script>
