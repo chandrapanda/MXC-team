@@ -27,3 +27,10 @@ THEN I am sent to the author's GitHub
 ## About our Page
 
 Users come to visit our page to feign off boredom! They can learn interesting things about kitty cats, look at cute pictures of dogs, and hear funny (and strange) jokes about Chuck Norris. Users are able to save items they like and can access them by clicking 'Saved Items' at the top of the page. To return to the landing page, they simply click 'Home'. 
+
+
+![Landing Page](./assets/Images/landingpage.png)
+![Cat Fact](./assets/Images/catfact.png)
+![Chuck Norris Joke](./assets/Images/chuck.png)
+![Saved Alert](./assets/Images/saved.png)
+![Access saved items](./assets/Images/savedthings.png)
