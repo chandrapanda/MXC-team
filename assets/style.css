@@ -27,13 +27,6 @@ html, body {
     display: none;
 }
 
-
-@media only screen and (max-width: 962px) {
-    .dog-pictures {
-        width: 250px;
-        height: auto;
-    }
-}
 #saved-stuff {
     display: none;
 }
@@ -44,8 +37,6 @@ html, body {
 
 #button-container {
     text-align: center;
-
-
 }
 
 .footer {
@@ -54,15 +45,29 @@ html, body {
     height: 50px;
     padding: 5px;
     width: 100%;
-
-    
 }
 
 .navbar {
     background-color: #b3c8d6;
-
 }
 
 #dog-pic-list {
     display: block;
+}
+
+#myModal {
+    display: none;
+    background-color: #b3c8d6;
+
+}
+
+.card-styling {
+    background-color: #ffffff;
+}
+
+@media only screen and (max-width: 962px) {
+    .dog-pictures {
+        width: 250px;
+        height: auto;
+    }
 }
