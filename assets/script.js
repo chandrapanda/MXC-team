@@ -5,6 +5,7 @@ var funnyJokesButton = document.querySelector("#funny-jokes");
 var paragraphEl = document.createElement("p");
 paragraphEl.classList.add('middle-area');
 var homeButton = document.getElementById("home-button");
+var modal = document.getElementById("myModal");
 
 //Storage Tools
 var localStorageJokes = localStorage.getItem('savedJokes');
@@ -35,10 +36,16 @@ homeButton.addEventListener("click", goBackToMainPage);
 funnyJokesButton.addEventListener("click", funnyJokes);
 dogPicsButton.addEventListener("click", getDogPicture);
 catFactsButton.addEventListener("click", getCatFact);
+document.getElementById("close-button").addEventListener("click", closeModal);
 document.getElementById('save-button-dog').addEventListener("click", savePupper);
 document.getElementById("saved-items").addEventListener("click", displaySavedItems);
 document.getElementById('save-button-joke').addEventListener("click", saveFunnyJoke);
 document.getElementById('save-button-cat').addEventListener("click", savedCatFact);
+
+//Closes modal onclick
+function closeModal() {
+    modal.style.display = "none";
+}
 
 // Display saved Items 
 function displaySavedItems() {
@@ -113,20 +120,20 @@ function saveFunnyJoke() {
 
     savedJokes.push(paragraphEl.innerHTML);
     localStorage.setItem('savedJokes', JSON.stringify(savedJokes));
-    alert('Saved! Click "Saved Items" at the top of the page to see your collection.');
+    modal.style.display = "block";
 }
 
 function savePupper() {
 
     savedPuppers.push(paragraphEl.innerHTML);
     localStorage.setItem('savedPuppers', JSON.stringify(savedPuppers));
-    alert('Saved! Click "Saved Items" at the top of the page to see your collection.');
+    modal.style.display = "block";
 }
 function savedCatFact() {
 
     savedCat.push(paragraphEl.innerHTML);
     localStorage.setItem('savedCat', JSON.stringify(savedCat));
-    alert('Saved! Click "Saved Items" at the top of the page to see your collection.');
+    modal.style.display = "block";
 }
 
 //Render saved items to page 
