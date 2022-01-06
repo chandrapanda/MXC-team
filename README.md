@@ -1,6 +1,8 @@
 # MXC-team
 Don't get bored!
 
+[Deployed Application](https://chandrapanda.github.io/MXC-team/)
+
 ## User Story
 
 As an internet user, I want to learn cat facts, see Chuck Norris jokes, and look at pictures of dogs so that I will be entertained. I DO NOT WANT TO GET RICKROLLED.
@@ -34,3 +36,23 @@ Users come to visit our page to feign off boredom! They can learn interesting th
 ![Chuck Norris Joke](./assets/Images/chuck.png)
 ![Saved Alert](./assets/Images/saved.png)
 ![Access saved items](./assets/Images/savedthings.png)
+
+## License
+* MIT
+
+## Technologies Used
+* HTML
+* CSS
+* JavaScript
+* Bulma CSS
+* Ninja API
+* Cat Fact API
+* Chuck Norris Jokes API
+* Cute Dog Pictures API
+
+## Contact Info
+https://github.com/chandrapanda - Chandra Holt
+https://github.com/ShaneWiens - Shane Wiens
+https://github.com/L-Stew206 - Luke Stewart
+https://github.com/Nderingo - Emmanuel Lyimo
+
